@@ -35,7 +35,7 @@ class LoadController extends Controller
     }
     function reportpage(){
         $report=Transaction::all();
-        $count=DB::table('transactions')->count();
+        $count=DB::table('detail_transaction1s')->count();
         return view('report')->with('transaction',$report)->with('count',$count);
     }
     function checkoutpage(){

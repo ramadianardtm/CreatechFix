@@ -105,9 +105,10 @@
             <?php $trandet = App\Models\DetailTransaction1::all()->where('transaction_id', $tran->id); ?>
             <tr>
                 <th scope="col">Product</th>
-                <th scope="col">Price</th>
+                <th scope="col">Price(IDR)</th>
                 <th scope="col">Qty</th>
-                <th scope="col">Subtotal</th>
+                <th scope="col">Subtotal(IDR)</th>
+                <th scope="col"><a href="order{{$tran['id']}}"><i style="font-size: 20px;cursor:pointer;color:white;" class="fa-solid fa-receipt"></i></a></th>
             </tr>
         </thead>
         <tbody>
