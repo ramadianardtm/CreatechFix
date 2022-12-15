@@ -79,8 +79,16 @@
                             </div>
                         </div>
                     </form>
+                    <h4 style="font-weight: bold; font-size:18px; margin-bottom:25px;">Filter by buyer name</h4>
+                    <form action="/reportbyname" method="post" class="row">
+                        @csrf
+                        <div class="d-flex col">
+                            <input name="search" style="width:625px;" type="text" class="form-control" placeholder="Search...">
+                            <button type="submit" style="margin-left:30px;" class="btn btn-signin btn-light">Search</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer mt-2">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>

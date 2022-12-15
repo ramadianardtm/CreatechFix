@@ -63,7 +63,7 @@
         <div class="home banner3 pt-2 mt-5" style="margin-bottom: 100px;">
             <div class="banner-grid-display3 align-items-center">
                 <div>
-                    <img src="/storage/{{ $detail->image }}" class="card-img-top p-4 rounded" alt="Flower Image">
+                    <img style="border-radius:27px;" src="/storage/{{ $detail->image }}" class="card-img-top p-4" alt="Flower Image">
                 </div>
                 <div class="pl-5">
                     <h3>{{ $detail->name }}</h3>

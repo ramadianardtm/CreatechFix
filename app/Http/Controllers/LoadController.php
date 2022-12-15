@@ -86,6 +86,18 @@ class LoadController extends Controller
         Auth::logout();
         return redirect('/');
     }
+    function reportfilterbyname(Request $request){
+        $search  = $request->search == null ? '' : $request->search;
+        $user = DB::table('transactions');
+
+        $user = $user
+            ->select('transactions.*','users.name as UserName')
+            ->leftJoin('users','users.id','transactions.user_id')
+            ->where('name','like', '%'.$search.'%')
+            ->get();
+        //  dd($user);
+        return view('reportbyname',['transactions'=>$user])->with('search',$search);
+    }
     function searchpage(Request $request){
         $search  = $request->search == null ? '' : $request->search;
         $product = Product::where('name','like', '%'.$search.'%')->orWhere('description','like', '%'.$search.'%')->get();
@@ -108,7 +120,7 @@ class LoadController extends Controller
     function addproductpage(){
         return view('add_product');
     }
-    function editproductpage($id){
+    function editproductpage($id){  
         $p=Product::find($id);
         return view('edit_product')->with('product',$p);
     }

@@ -140,7 +140,7 @@
 
             <div class="card mx-1 mt-4" style="width: 15rem;">
                 <a href="/detail/{{ $pr->id }}">
-                    <div class="rounded"><img style="height:150px; object-fit:cover;"  src="/storage/{{ $pr->image }}" class="card-img-top p-4 rounded" alt="Product Image">
+                    <div class="rounded"><img style="height:150px; object-fit:cover;border-radius:27px"  src="/storage/{{ $pr->image }}" class="card-img-top p-4" alt="Product Image">
                     </div>
                     <div class="card-body">
                         <p class="card-text" style="font-size: 18px;">{{ $pr->name }}</p>
@@ -158,7 +158,7 @@
                         @else
                         <div class="d-flex" style="justify-content: end;">
                             <a href="/edit/{{ $pr->id }}" class="btn btn-edit">Edit</a>
-                            <a class="btn icon-del" data-toggle="modal" data-target="#deleteproduct"><i class="fa-regular fa-trash-can" style="color: tomato;font-size:18px"></i></a>
+                            <a href="/remove/{{ $pr->id }}" class="btn icon-del"><i class="fa-regular fa-trash-can" style="color: tomato;font-size:18px"></i></a>
                         </div>
                         @endif
                         @endif

@@ -94,10 +94,10 @@
     </div>
     <!-- Popup modal end -->
 
-    @if ($transaction->count() == 0)
+    @if ($transactions->count() == 0)
     <p>No sales on these date!</p>
     @else
-    @foreach ($transaction as $tran)
+    @foreach ($transactions as $tran)
     <?php $total_price = 0; ?>
     Transaction Date : {{ $tran->created_at }}
     <table class="table">
@@ -107,8 +107,8 @@
                 <th scope="col">Product</th>
                 <th scope="col">Price(IDR)</th>
                 <th scope="col">Qty</th>
-                <th scope="col">Subtotal(IDR)   </th>
-                <th scope="col"><a href="order{{$tran['id']}}"><i style="font-size: 20px;cursor:pointer;color:white;" class="fa-solid fa-receipt"></i></a></th>
+                <th scope="col">Subtotal(IDR)</th>
+                <th scope="col"><a href="order{{$tran->id}}"><i style="font-size: 20px;cursor:pointer;color:white;" class="fa-solid fa-receipt"></i></a></th>
             </tr>
         </thead>
         <tbody>
@@ -121,9 +121,7 @@
                 <td>{{ $td->quantity * $product_info->price }}</td>
             </tr>
             <?php $total_price += $td->quantity * $product_info->price; ?>
-
             @endforeach
-
         </tbody>
     </table>
     @foreach ($trandet as $pd)

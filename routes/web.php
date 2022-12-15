@@ -37,6 +37,7 @@ Route::get('/report', 'LoadController@reportpage')->middleware('adminonly');
 Route::get('/cart', 'LoadController@cartpage')->middleware('memberonly');
 
 Route::post('/reportfilter', 'LoadController@reportfilter');
+Route::post('/reportbyname', 'LoadController@reportfilterbyname');
 Route::post('/search', 'LoadController@searchpage');
 Route::get('/detail', 'LoadController@detailpage');
 Route::get('/about', 'LoadController@aboutpage');
